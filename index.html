@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muse Gadget — ESP32-S3-DevKitC-1 installer</title>
+<script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+  esp-web-install-button { margin: 1rem 0; display: block; }
+  code { background: #f0f0f0; padding: 0.1em 0.35em; border-radius: 4px; }
+</style>
+</head>
+<body>
+<h1>Muse Gadget — home bridge installer</h1>
+<p>Flashes the token-less Muse Gadget firmware (ESP-IDF v6.0.3 build) onto an
+<strong>Espressif ESP32-S3-DevKitC-1 (N8R8)</strong> over USB, straight from Chrome.</p>
+<ol>
+  <li>Plug the board into this computer with a USB <em>data</em> cable.</li>
+  <li>Click <strong>Connect</strong> below and pick the board's serial port
+      (it shows up as an ESP32-S3 / USB JTAG port).</li>
+  <li>Choose <strong>Install</strong> and wait for it to finish — do not unplug mid-flash.</li>
+</ol>
+<esp-web-install-button manifest="manifest.json"></esp-web-install-button>
+<p><strong>After flashing:</strong> pair the board in the Muse app
+(Settings → Devices, Developer mode on). This build has no SDK token baked in —
+if pairing asks for one, the token can be sent to the board over its serial
+console with the line <code>&gt;sdk_token=&lt;your token&gt;</code>.</p>
+<p>Requires Chrome or Edge on desktop (Web Serial). Safari/Firefox won't work.</p>
+</body>
+</html>
